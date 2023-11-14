@@ -4,6 +4,7 @@ body {
   display: flex;
 }
 .switchContainer {
+  position: relative;
   width: 400px;
   height: 200px;
   border-radius: 100px;
@@ -14,8 +15,11 @@ body {
   background-repeat: no-repeat;
   background-size: 200%;
   background-position: 100%;
+  z-index: 1;
+  overflow: hidden;
 }
-.switch {
+.switchButton {
+  position: relative;
   width: 160px;
   height: 160px;
   transition: ease-in-out 600ms;
@@ -25,13 +29,13 @@ body {
   background-repeat: no-repeat;
   border-radius: 80px;
   box-shadow: 0px 0px 3px 1px rgb(252 192 9);
-  top: 10%;
   left: 4%;
-  position: relative;
+  transform: translateY(12%);
   cursor: pointer;
   user-select: none;
+  z-index: 3;
 }
-.switch:focus {
+.switchButton:focus {
   outline: none;
 }
 .off {
@@ -47,4 +51,47 @@ body {
   background: url("./imgs/nightSky.png");
   background-size: 200%;
   background-position: 100%;
+}
+.rocket {
+  display: inline-block;
+  position: relative;
+  width: 13%;
+  height: 25%;
+  transform: translate(780%, -40%) rotate(10deg);
+}
+.astronaut {
+  display: inline-block;
+  position: relative;
+  width: 20%;
+  height: 35%;
+  transform: translate(-70%, -30%) rotateY(180deg);
+}
+.Rup {
+  position: absolute;
+  animation: moveAround 3s normal linear;
+  animation-delay: 1500ms;
+  cursor: default;
+}
+.Aup {
+  position: absolute;
+  transform: translateX(-40%) rotateY(90deg);
+  animation: moveAroundA 3s normal linear;
+  animation-delay: 1500ms;
+  cursor: default;
+}
+@keyframes moveAround {
+  0% {
+    transform: translate(600%, -40%) rotate(10deg);
+  }
+  100% {
+    transform: translate(25%, -270%) rotate(-50deg);
+  }
+}
+@keyframes moveAroundA {
+  0% {
+    transform: translate(-70%, -30%) rotateY(180deg);
+  }
+  100% {
+    transform: translate(290%, -200%) rotateY(180deg) rotate(-30deg);
+  }
 }

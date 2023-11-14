@@ -1,10 +1,14 @@
 $(function () {
   let swC = $(".switchContainer");
-  let sw = $(".switch");
+  let swB = $(".switchButton");
+  let rocket = $(".rocket")
+  let astronaut = $(".astronaut")
 
-  sw.on("click", () => {
+  swB.on("click", () => {
     setTimeout(() => {
-      sw.toggleClass("off");
+      swB.toggleClass("off");
+      rocket.toggleClass("Rup");
+      astronaut.toggleClass("Aup");
       swC.toggleClass("containerOff");
     }, 300);
   });
