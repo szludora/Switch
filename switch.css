@@ -29,6 +29,10 @@ body {
   position: relative;
   cursor: pointer;
   transition: ease-out 1000ms;
+  user-select: none;
+}
+.switch:focus{
+  outline: none;
 }
 .off {
   left: 56%;
