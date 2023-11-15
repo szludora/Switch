@@ -9,25 +9,26 @@ body {
 .switchContainer {
   position: relative;
   width: var(--swCw);
-  height: calc(var(--swCw)/2);
-  border-radius: calc(var(--swCw)/4);
+  height: calc(var(--swCw) / 2);
+  border-radius: calc(var(--swCw) / 4);
   margin: auto auto;
   transition: ease-in-out 600ms;
   background: url("./imgs/sky.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-size: 200%;
-  background-position: 100%;
+  background-size: 100%;
+  background-position: 0% 0;
+  transition: ease-in-out 600ms;
   z-index: 1;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .switchButton {
   position: relative;
-  width: calc(var(--swCw)/2.5);
-  height: calc(var(--swCw)/2.5);
+  width: calc(var(--swCw) / 2.5);
+  height: calc(var(--swCw) / 2.5);
   transition: ease-in-out 600ms;
   background: url("./imgs/sun.png");
-  background-size: 140%;
+  background-size: 200%;
   background-position: 50%;
   background-repeat: no-repeat;
   border-radius: 80px;
@@ -52,22 +53,24 @@ body {
 .containerOff {
   transition: ease-in-out 600ms;
   background: url("./imgs/nightSky.png");
-  background-size: 200%;
-  background-position: 100%;
+  background-size: 130%;
+  background-position: 100% 0;
+  transition: ease-in-out 600ms;
 }
 .rocket {
   position: absolute;
-  transform: translate(10em, -.4em) rotate(10deg);
   display: inline-block;
-  width: calc(var(--swCw)/4.8);
-  height:calc(var(--swCw)/4.8);
+  width: calc(var(--swCw) / 4.8);
+  height: calc(var(--swCw) / 4.8);
+  transform: translate(var(--swCw), calc(var(--swCw) * 0.04)) rotate(10deg);
 }
 .astronaut {
   position: absolute;
-  transform: translate(-2.5em, -0.7em) rotateY(180deg);
+  transform: translate(calc(var(--swCw) / -4), calc(var(--swCw) * -0.07))
+    rotateY(180deg);
   display: inline-block;
-  width: calc(var(--swCw)/3);
-  height:calc(var(--swCw)/3.5);
+  width: calc(var(--swCw) / 3);
+  height: calc(var(--swCw) / 3.5);
 }
 .Rup {
   animation: moveAround 3s normal linear;
@@ -82,17 +85,20 @@ body {
 }
 @keyframes moveAround {
   0% {
-    transform: translate(--swCw, calc(--swCw*0.04)em) rotate(10deg);
+    transform: translate(var(--swCw), calc(var(--swCw) * 0.04)) rotate(10deg);
   }
   100% {
-    transform: translate(2em, -3.3em) rotate(-38deg);
+    transform: translate(calc(var(--swCw) / 8), calc(var(--swCw) / -3))
+      rotate(-38deg);
   }
 }
 @keyframes moveAroundA {
   0% {
-    transform: translate(-2.5em, -0.7em) rotateY(180deg);
+    transform: translate(calc(var(--swCw) / -4), calc(var(--swCw) * -0.07))
+      rotateY(180deg);
   }
   100% {
-    transform: translate(6em, -3.8em) rotateY(180deg) rotate(-30deg);
+    transform: translate(calc(var(--swCw) * 0.6), calc(var(--swCw) * -0.38))
+      rotateY(180deg) rotate(-30deg);
   }
 }
