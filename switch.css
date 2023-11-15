@@ -1,17 +1,40 @@
 :root {
-  --swCw: 30em;
+  --swCw: 10em;
 }
 body {
+  background-image: url("./imgs/110.png");
+  transition: ease 1000ms;
+  position: fixed;
   height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: 110%;
   margin: 0;
   display: flex;
+  overflow: hidden;
+  background-position: 2% calc(var(--swCw) / 1.6);
+}
+header {
+  background-color: rgba(69, 172, 204, 0.58);
+  transition: ease 1000ms;
+  width: 100vw;
+  height: calc(var(--swCw) / 1.58);
+}
+.headerDark {
+  transition: ease 1000ms;
+  background-color: rgb(8 33 53 / 87%);
+}
+.bodyOff {
+  position: fixed;
+  background-image: url("./imgs/111.png");
+  transition: ease 1000ms;
 }
 .switchContainer {
   position: relative;
   width: var(--swCw);
   height: calc(var(--swCw) / 2);
   border-radius: calc(var(--swCw) / 4);
-  margin: auto auto;
+  margin: 0.5em 0.5em auto auto;
   transition: ease-in-out 600ms;
   background: url("./imgs/sky.jpg");
   background-size: cover;
@@ -74,13 +97,13 @@ body {
 }
 .Rup {
   animation: moveAround 3s normal linear;
-  animation-delay: 1500ms;
+  animation-delay: 1000ms;
   cursor: default;
 }
 .Aup {
   position: absolute;
   animation: moveAroundA 3s normal;
-  animation-delay: 1500ms;
+  animation-delay: 1000ms;
   cursor: default;
 }
 @keyframes moveAround {
